@@ -21,3 +21,15 @@ body {
 .thumb {
   height: 70px;
 }
+h3 {
+  color: #f53;
+}
+#color-picker label {
+  text-align: right;
+}
+.btn {
+  margin-right: 5px;
+}
+.canvas-control {
+  margin: 0 auto;
+}

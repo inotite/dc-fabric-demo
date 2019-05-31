@@ -1,13 +1,14 @@
 (function() {
   var canvas = new fabric.Canvas('canvas');
   
-  canvas.backgroundColor='white';
+  canvas.backgroundColor='#aaa';
   
   // resize the canvas to fill browser window dynamically
   window.addEventListener('resize', resizeCanvas, false);
 
   function resizeCanvas() {
     canvas.setWidth(document.getElementById('canva-row').offsetWidth );
+    // console.log(document.getElementById('canva-row').offsetWidth);
   }
   resizeCanvas();
   
@@ -81,6 +82,56 @@
   $('#addText').on('click', function (){
     var text = new fabric.Text($('#canvaText').val(), {left : 210, top: 110});
     canvas.add(text);
+  });
+
+
+  // Init color pickers
+  $('#team-name').spectrum({
+    showPaletteOnly: true,
+    showPalette:true,
+    color: 'blanchedalmond',
+    palette: [
+        ['black', 'white', 'blanchedalmond',
+        'rgb(255, 128, 0);', 'hsv 100 70 50'],
+        ['red', 'yellow', 'green', 'blue', 'violet']
+    ]
+  });
+
+  $('#escape-label').spectrum({
+    color: 'white'
+  });
+
+  $('#escape-room').spectrum({
+    color: 'violet'
+  });
+  $('#escape-time').spectrum({
+    color: 'yellow'
+  });
+  $('#highlights').spectrum();
+
+  // Upload a Photo
+
+  $('#uploadPhoto').click(function(){
+    $('#file').click();
+  });
+
+  $('#file').change(function(){
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            // console.log(e.target.result);
+            fabric.Image.fromURL(e.target.result, function(oImg) {
+              oImg.setWidth(canvas.width);
+              oImg.set('height', canvas.height);
+              oImg.selectable = false;
+              oImg.set({'left':canvas.width/2, 'top': canvas.height/2});
+              canvas.add(oImg);
+            });
+        };
+
+        reader.readAsDataURL(this.files[0]);
+    }
   });
 
 })();
