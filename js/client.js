@@ -122,10 +122,11 @@
         reader.onload = function (e) {
             // console.log(e.target.result);
             fabric.Image.fromURL(e.target.result, function(oImg) {
-              oImg.setWidth(canvas.width);
-              oImg.set('height', canvas.height);
+              oImg.scaleX = canvas.width/oImg.width;
+              oImg.scaleY = canvas.height/oImg.height;
+              oImg.setCoords();
+              
               oImg.selectable = false;
-              oImg.set({'left':canvas.width/2, 'top': canvas.height/2});
               canvas.add(oImg);
             });
         };
