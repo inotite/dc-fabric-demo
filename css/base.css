@@ -22,6 +22,7 @@ body {
   height: 70px;
 }
 
+
 /* User changes */
 
 h3 {
@@ -35,4 +36,20 @@ h3 {
 }
 .canvas-control {
   margin: 0 auto;
+}
+.fabric-body {
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
+.rh-scroll-height-fixed {
+  height: 400px;
+}
+.rh-normalize-preset-size img {
+  width: 100px;
+  height: 100px;
+}
+.rh-overlay-tools {
+  margin-right: 10px 0 0;
 }

@@ -59,8 +59,8 @@ function initAligningGuidelines(canvas) {
         activeObjectCenter = activeObject.getCenterPoint(),
         activeObjectLeft = activeObjectCenter.x,
         activeObjectTop = activeObjectCenter.y,
-        activeObjectHeight = activeObject.getBoundingRectHeight(),
-        activeObjectWidth = activeObject.getBoundingRectWidth(),
+        activeObjectHeight = activeObject.getBoundingRect().height,
+        activeObjectWidth = activeObject.getBoundingRect().width,
         horizontalInTheRange = false,
         verticalInTheRange = false,
         transform = canvas._currentTransform;
@@ -78,8 +78,8 @@ function initAligningGuidelines(canvas) {
       var objectCenter = canvasObjects[i].getCenterPoint(),
           objectLeft = objectCenter.x,
           objectTop = objectCenter.y,
-          objectHeight = canvasObjects[i].getBoundingRectHeight(),
-          objectWidth = canvasObjects[i].getBoundingRectWidth();
+          objectHeight = canvasObjects[i].getBoundingRect().height,
+          objectWidth = canvasObjects[i].getBoundingRect().width;
         
       // snap by the horizontal center line
       // if (isInRange(objectLeft, activeObjectLeft)) {

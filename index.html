@@ -10,23 +10,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
   <script>
 			WebFont.load({
-            google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
-            active: function() {
-                sessionStorage.fonts = true;
-            }
-          });
-        </script>
+        google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+        active: function() {
+            sessionStorage.fonts = true;
+        }
+      });
+    </script>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto:300,400,500,600,700" media="all">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-  <link href="css/bootstrap-combined.min.css" rel="stylesheet">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
   <!-- Le styles -->
   <link href="css/vendors.bundle.css" rel="stylesheet">
   <link href="css/style.bundle.css" rel="stylesheet">
+
   <link href="css/spectrum.css" rel="stylesheet">
   <link href="css/base.css" rel="stylesheet">
 
@@ -48,108 +42,216 @@
 
       <div class="container">
       
-        <div class="row">
-          <div class="col-xs-4">
-            <ul class="m-nav">
-              <li class="m-nav__item">
-                <h3>Time on Team Photos</h3>
-                <div class="m-form__group form-group">
-                  <label for="">Would you like to display escape time on your team photos?</label>
-                  <div class="m-radio-inline">
-                    <label class="m-radio">
-                      <input type="radio" name="time" value="1" checked="checked"> Enable
-                      <span></span>
-                    </label>
-                    <label class="m-radio">
-                      <input type="radio" name="time" value="2"> Disable
-                      <span></span>
-                    </label>
+        <div class="row fabric-body">
+          <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
+                <div class="m-accordion m-accordion--default m-accordion--solid" id="tasklist" role="tablist">
+
+                  <!--begin::Item-->
+                  <div class="m-accordion__item">
+                    <div class="m-accordion__item-head collapsed" role="tab" id="configure-head" data-toggle="collapse" href="#configure-body" aria-expanded="false">
+                      <span class="m-accordion__item-icon"><i class="fa flaticon-user-ok"></i></span>
+                      <span class="m-accordion__item-title">Configure Details</span>
+                      <span class="m-accordion__item-mode"></span>
+                    </div>
+                    <div class="m-accordion__item-body collapse" id="configure-body" class="" role="tabpanel" aria-labelledby="configure-head" data-parent="#tasklist">
+                      <div class="m-accordion__item-content">
+                          <ul class="m-nav m-scrollable m-scrollable--track rh-scroll-height-fixed" data-scrollable="true">
+                            <li class="m-nav__item">
+                              <h3>Time on Team Photos</h3>
+                              <div class="m-form__group form-group">
+                                <label for="">Would you like to display escape time on your team photos?</label>
+                                <div class="m-radio-inline">
+                                  <label class="m-radio">
+                                    <input type="radio" name="time" value="1" checked="checked"> Enable
+                                    <span></span>
+                                  </label>
+                                  <label class="m-radio">
+                                    <input type="radio" name="time" value="2"> Disable
+                                    <span></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="m-nav__item">
+                              <h3>Team Names on Team Photos</h3>
+                              <div class="m-form__group form-group">
+                                <label for="">Would you like to display your customer's team names on your team photos?</label>
+                                <div class="m-radio-inline">
+                                  <label class="m-radio">
+                                    <input type="radio" name="name" value="1" checked="checked"> Enable
+                                    <span></span>
+                                  </label>
+                                  <label class="m-radio">
+                                    <input type="radio" name="name" value="2"> Disable
+                                    <span></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="m-nav__item">
+                              <h3>Display Escape Room</h3>
+                              <div class="m-form__group form-group">
+                                <label for="">Would you like to display the escape room name on your team photos?</label>
+                                <div class="m-radio-inline">
+                                  <label class="m-radio">
+                                    <input type="radio" name="escape-room" value="1" checked="checked"> Enable
+                                    <span></span>
+                                  </label>
+                                  <label class="m-radio">
+                                    <input type="radio" name="escape-room" value="2"> Disable
+                                    <span></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="m-nav__item">
+                              <h3>Display Escape Label</h3>
+                              <div class="m-form__group form-group">
+                                <label for="">If a group escapes, would you like to display the "Escaped" label on your team photos?</label>
+                                <div class="m-radio-inline">
+                                  <label class="m-radio">
+                                    <input type="radio" name="escape-label" value="1" checked="checked"> Enable
+                                    <span></span>
+                                  </label>
+                                  <label class="m-radio">
+                                    <input type="radio" name="escape-label" value="2"> Disable
+                                    <span></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="m-nav__item" id="color-picker">
+                              <h3>Pick colors</h3>
+                              <div class="form-group m-form__group row">
+                                  <label for="team-name" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Team Name</label>
+                                  <input type="text" id="team-name" />
+                              </div>
+                              <div class="form-group m-form__group row">
+                                  <label for="escape-label" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Esacpe Label</label>
+                                  <input type="text" id="escape-label" />
+                              </div>
+                              <div class="form-group m-form__group row">
+                                  <label for="escape-room" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Escape Room</label>
+                                  <input type="text" id="escape-room" />
+                              </div>
+                              <div class="form-group m-form__group row">
+                                  <label for="escape-time" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Escape Time</label>
+                                  <input type="text" id="escape-time" />
+                              </div>
+                              <div class="form-group m-form__group row">
+                                  <label for="highlights" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Highlights</label>
+                                  <input type="text" id="highlights" />
+                              </div>
+                              <div class="m-form__group form-group row justify-content-center">
+                                <button id="reset-all" class="btn m-btn--pill m-btn--air btn-danger"><i class="la la-refresh"></i> Reset to default Colors</button>
+                              </div>
+                            </li>
+                          </ul>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li class="m-nav__item">
-                <h3>Team Names on Team Photos</h3>
-                <div class="m-form__group form-group">
-                  <label for="">Would you like to display your customer's team names on your team photos?</label>
-                  <div class="m-radio-inline">
-                    <label class="m-radio">
-                      <input type="radio" name="name" value="1" checked="checked"> Enable
-                      <span></span>
-                    </label>
-                    <label class="m-radio">
-                      <input type="radio" name="name" value="2"> Disable
-                      <span></span>
-                    </label>
+
+                  <!--end::Item-->
+
+                  <!--begin::Item-->
+                  <div class="m-accordion__item">
+                    <div class="m-accordion__item-head" role="tab" id="overlay-head" data-toggle="collapse" href="#overlay-body">
+                      <span class="m-accordion__item-icon"><i class="fa  flaticon-placeholder"></i></span>
+                      <span class="m-accordion__item-title">Overlay Tools</span>
+                      <span class="m-accordion__item-mode"></span>
+                    </div>
+                    <div class="m-accordion__item-body collapse show" id="overlay-body" class="" role="tabpanel" aria-labelledby="overlay-head" data-parent="#tasklist">
+                      <div class="m-accordion__item-content">
+                        <ul class="nav nav-tabs  m-tabs-line" role="tablist">
+                          <li class="nav-item m-tabs__item">
+                            <a class="nav-link m-tabs__link active" data-toggle="tab" href="#overlay-preset" role="tab">Overlays</a>
+                          </li>
+                          <li class="nav-item m-tabs__item">
+                            <a class="nav-link m-tabs__link" data-toggle="tab" href="#overlay-element" role="tab">Elements</a>
+                          </li>
+                        </ul>
+                        <div class="tab-content rh-normalize-preset-size">
+                          <div class="tab-pane active" id="overlay-preset" role="tabpanel">
+                              <div class="m-scrollable" data-scrollable="true" data-height="400">
+                                <div class="m-list-timeline">
+                                  <div class="m-list-timeline__items">
+                                    <div class="m-list-timeline__item">
+                                      <span class="m-list-timeline__badge"></span>
+                                      <span class="m-list-timeline__text">
+                                        <img src="img/TAG.png" alt="preset" />
+                                      </span>
+                                      <span class="m-list-timeline__time">Just now</span>
+                                    </div>
+                                    <div class="m-list-timeline__item">
+                                      <span class="m-list-timeline__badge"></span>
+                                      <span class="m-list-timeline__text">
+                                        <img src="img/TAG.png" alt="preset" />
+                                        <span class="m-badge m-badge--success m-badge--wide">completed</span>
+                                      </span>
+                                      <span class="m-list-timeline__time">14 mins</span>
+                                    </div>
+                                    <div class="m-list-timeline__item">
+                                      <span class="m-list-timeline__badge"></span>
+                                      <span class="m-list-timeline__text">
+                                          <img src="img/TAG.png" alt="preset" />
+                                          <a href="#" class="m-link">Check</a>
+                                      </span>
+                                      <span class="m-list-timeline__time">2 hrs</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="tab-pane" id="overlay-element" role="tabpanel">
+                              <div class="m-scrollable" data-scrollable="true" data-height="400">
+                                <div class="m-list-timeline">
+                                  <div class="m-list-timeline__items">
+                                    <div class="m-list-timeline__item">
+                                      <span class="m-list-timeline__badge"></span>
+                                      <span class="m-list-timeline__text">
+                                        <img src="img/TAG.png" alt="preset" />
+                                      </span>
+                                      <span class="m-list-timeline__time">Just now</span>
+                                    </div>
+                                    <div class="m-list-timeline__item">
+                                      <span class="m-list-timeline__badge"></span>
+                                      <span class="m-list-timeline__text">
+                                        <img src="img/MAT.jpg" alt="preset" />
+                                      </span>
+                                      <span class="m-list-timeline__time">34 mins</span>
+                                    </div>
+                                    <div class="m-list-timeline__item">
+                                      <span class="m-list-timeline__badge"></span>
+                                      <span class="m-list-timeline__text">
+                                          <img src="img/TAG.png" alt="preset" />
+                                      </span>
+                                      <span class="m-list-timeline__time">1 hrs</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="row justify-content-end rh-overlay-tools">
+                            <a href="#" class="btn btn-success m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill m-btn--air">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li class="m-nav__item">
-                <h3>Display Escape Room</h3>
-                <div class="m-form__group form-group">
-                  <label for="">Would you like to display the escape room name on your team photos?</label>
-                  <div class="m-radio-inline">
-                    <label class="m-radio">
-                      <input type="radio" name="escape-room" value="1" checked="checked"> Enable
-                      <span></span>
-                    </label>
-                    <label class="m-radio">
-                      <input type="radio" name="escape-room" value="2"> Disable
-                      <span></span>
-                    </label>
-                  </div>
-                </div>
-              </li>
-              <li class="m-nav__item">
-                <h3>Display Escape Label</h3>
-                <div class="m-form__group form-group">
-                  <label for="">If a group escapes, would you like to display the "Escaped" label on your team photos?</label>
-                  <div class="m-radio-inline">
-                    <label class="m-radio">
-                      <input type="radio" name="escape-label" value="1" checked="checked"> Enable
-                      <span></span>
-                    </label>
-                    <label class="m-radio">
-                      <input type="radio" name="escape-label" value="2"> Disable
-                      <span></span>
-                    </label>
-                  </div>
-                </div>
-              </li>
-              <li class="m-nav__item" id="color-picker">
-                <h3>Pick colors</h3>
-                <div class="form-group m-form__group row">
-                    <label for="team-name" class="col-5">Team Name</label>
-                    <input type="text" id="team-name" />
-                </div>
-                <div class="form-group m-form__group row">
-                    <label for="escape-label" class="col-5">Esacpe Label</label>
-                    <input type="text" id="escape-label" />
-                </div>
-                <div class="form-group m-form__group row">
-                    <label for="escape-room" class="col-5">Escape Room</label>
-                    <input type="text" id="escape-room" />
-                </div>
-                <div class="form-group m-form__group row">
-                    <label for="escape-time" class="col-5">Escape Time</label>
-                    <input type="text" id="escape-time" />
-                </div>
-                <div class="form-group m-form__group row">
-                    <label for="highlights" class="col-5">Highlights</label>
-                    <input type="text" id="highlights" />
-                </div>
-                <div class="m-form__group form-group row">
-                  <button id="reset-all" class="col-md-offset-3 col-md-6 btn m-btn--pill m-btn--air btn-warning">Reset to default Colors</button>
-                </div>
-              </li>
-            </ul>
+
+                  <!--end::Item-->
+              </div>
           </div>
-          <div class="col-xs-8">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group m-form__group row">
               <div class="canvas-control">
-                  <button id="uploadPhoto" class="btn m-btn--pill m-btn--air btn-primary">Upload Photo</button>
+                  <button id="uploadPhoto" class="btn m-btn--pill m-btn--air btn-secondary">Upload Photo</button>
                   <input type="file" id="file" class="hidden">
-                  <button id="saveToPng" class="btn m-btn--pill m-btn--air btn-success">Save to Jpeg</button>
-                  <button id="delete" class="btn m-btn--pill m-btn--air btn-danger">Delete selected object</button>
+                  <button id="resizePng" class="btn m-btn--pill m-btn--air btn-secondary">Resize</button>
+                  <button id="saveToPng" class="btn m-btn--pill m-btn--air btn-success">Save</button>
+                  <button id="delete" class="btn m-btn--pill m-btn--air btn-danger">Delete</button>
               </div>
             </div> <!-- /row -->
             <div class="row" id="canva-row">
@@ -165,13 +267,18 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="js/vendors.bundle.js"></script>
+    <script src="js/scripts.bundle.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
     <script src="js/spectrum.js"></script>
+
     <script src="js/canvas2image.js"></script>
     <script src="js/fabric.js"></script>
+
     <script src="js/aligning_guidelines.js"></script>
     <script src="js/client.js"></script>
+
 
   </body>
   </html>

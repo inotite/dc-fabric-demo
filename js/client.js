@@ -7,9 +7,27 @@
   window.addEventListener('resize', resizeCanvas, false);
 
   function resizeCanvas() {
-    canvas.setWidth(document.getElementById('canva-row').offsetWidth );
+    canvas.setWidth($('#canva-row')[0].offsetWidth-30 );
+    canvas.item(0).set({left: canvas.width/2, top: canvas.height/2});
+    console.log($('#canva-row')[0].offsetWidth);
     // console.log(document.getElementById('canva-row').offsetWidth);
   }
+
+
+  // Add Placeholder
+
+  var placeholder = new fabric.Text("Upload a Photo Here", {
+    fontSize: 40,
+    fontFamily: 'Comic Sans MS',
+    left: canvas.width/2,
+    top: canvas.height/2,
+    originX: 'center',
+    originY: 'center',
+    selectable: false
+  });
+
+  canvas.add(placeholder);
+
   resizeCanvas();
   
   initAligningGuidelines(canvas);
@@ -28,7 +46,7 @@
   function drawObject(imageSrc) {
     fabric.Image.fromURL(imageSrc, function (oImg) {
       // scale image down before adding it onto canvas
-      canvas.add(oImg.set({ left : 110, top: 110}).scale(0.5));
+      canvas.add(oImg.set({ left : 10, top: 10}).scale(0.5));
     });
   }
 
@@ -126,7 +144,7 @@
               oImg.scaleY = canvas.height/oImg.height;
               oImg.setCoords();
               
-              oImg.selectable = false;
+              oImg.selectable = true;
               canvas.add(oImg);
             });
         };
@@ -134,5 +152,7 @@
         reader.readAsDataURL(this.files[0]);
     }
   });
+
+  // $('.m-list-timeline__text').draggable();
 
 })();
