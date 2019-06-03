@@ -7,14 +7,14 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script> -->
   <script>
-			WebFont.load({
-        google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
-        active: function() {
-            sessionStorage.fonts = true;
-        }
-      });
+			// WebFont.load({
+      //   google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+      //   active: function() {
+      //       sessionStorage.fonts = true;
+      //   }
+      // });
     </script>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto:300,400,500,600,700" media="all">
   <!-- Le styles -->
@@ -55,7 +55,36 @@
                     </div>
                     <div class="m-accordion__item-body collapse" id="configure-body" class="" role="tabpanel" aria-labelledby="configure-head" data-parent="#tasklist">
                       <div class="m-accordion__item-content">
-                          <ul class="m-nav m-scrollable m-scrollable--track rh-scroll-height-fixed" data-scrollable="true">
+                          <ul class="m-nav m-scrollable m-scrollable--track scroll-height-fixed" data-scrollable="true">
+                            <li class="m-nav__item">
+                              <h3>Select your Room Name</h3>
+                              <div class="form-group m-form__group">
+                                <label for="room-name">In which room did you take your adventure?</label>
+                                <select class="form-control m-input m-input--air" id="room-name">
+                                  <option>Wizard's Redemption</option>
+                                  <option>Crematory</option>
+                                  <option>Trespassed</option>
+                                  <option>Space Sector</option>
+                                </select>
+                              </div>
+                            </li>
+                            <li class="m-nav__item">
+                              <h3>Select your Team Name</h3>
+                              <div class="form-group m-form__group">
+                                <label for="team-name">What is your team name?</label>
+                                <select class="form-control m-input m-input--air" id="team-name">
+                                  <option>Brooke West</option>
+                                  <option>Pietro Pecci</option>
+                                  <option>Elaine Xiong</option>
+                                  <option>Rosaline Caltrider</option>
+                                  <option>Micelle Lee</option>
+                                  <option>Brandi Rose</option>
+                                  <option>Christi Green</option>
+                                  <option>Ivan Caballero</option>
+                                  <option>Stephen Wassom</option>
+                                </select>
+                              </div>
+                            </li>
                             <li class="m-nav__item">
                               <h3>Time on Team Photos</h3>
                               <div class="m-form__group form-group">
@@ -66,7 +95,7 @@
                                     <span></span>
                                   </label>
                                   <label class="m-radio">
-                                    <input type="radio" name="time" value="2"> Disable
+                                    <input type="radio" name="time" value="0"> Disable
                                     <span></span>
                                   </label>
                                 </div>
@@ -82,7 +111,7 @@
                                     <span></span>
                                   </label>
                                   <label class="m-radio">
-                                    <input type="radio" name="name" value="2"> Disable
+                                    <input type="radio" name="name" value="0"> Disable
                                     <span></span>
                                   </label>
                                 </div>
@@ -94,11 +123,11 @@
                                 <label for="">Would you like to display the escape room name on your team photos?</label>
                                 <div class="m-radio-inline">
                                   <label class="m-radio">
-                                    <input type="radio" name="escape-room" value="1" checked="checked"> Enable
+                                    <input type="radio" name="display_room_name" value="1" checked="checked"> Enable
                                     <span></span>
                                   </label>
                                   <label class="m-radio">
-                                    <input type="radio" name="escape-room" value="2"> Disable
+                                    <input type="radio" name="display_room_name" value="0"> Disable
                                     <span></span>
                                   </label>
                                 </div>
@@ -114,7 +143,7 @@
                                     <span></span>
                                   </label>
                                   <label class="m-radio">
-                                    <input type="radio" name="escape-label" value="2"> Disable
+                                    <input type="radio" name="escape-label" value="0"> Disable
                                     <span></span>
                                   </label>
                                 </div>
@@ -123,20 +152,20 @@
                             <li class="m-nav__item" id="color-picker">
                               <h3>Pick colors</h3>
                               <div class="form-group m-form__group row">
-                                  <label for="team-name" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Team Name</label>
-                                  <input type="text" id="team-name" />
+                                  <label for="team-name-color" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Team Name</label>
+                                  <input type="text" id="team-name-color" />
                               </div>
                               <div class="form-group m-form__group row">
                                   <label for="escape-label" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Esacpe Label</label>
                                   <input type="text" id="escape-label" />
                               </div>
                               <div class="form-group m-form__group row">
-                                  <label for="escape-room" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Escape Room</label>
-                                  <input type="text" id="escape-room" />
+                                  <label for="room-name-color" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Escape Room</label>
+                                  <input type="text" id="room-name-color" />
                               </div>
                               <div class="form-group m-form__group row">
-                                  <label for="escape-time" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Escape Time</label>
-                                  <input type="text" id="escape-time" />
+                                  <label for="time-color" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Escape Time</label>
+                                  <input type="text" id="time-color" />
                               </div>
                               <div class="form-group m-form__group row">
                                   <label for="highlights" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Highlights</label>
@@ -170,7 +199,7 @@
                             <a class="nav-link m-tabs__link" data-toggle="tab" href="#overlay-element" role="tab">Elements</a>
                           </li>
                         </ul>
-                        <div class="tab-content rh-normalize-preset-size">
+                        <div class="tab-content normalize-preset-size">
                           <div class="tab-pane active" id="overlay-preset" role="tabpanel">
                               <div class="m-scrollable" data-scrollable="true" data-height="400">
                                 <div class="m-list-timeline">
@@ -178,25 +207,38 @@
                                     <div class="m-list-timeline__item">
                                       <span class="m-list-timeline__badge"></span>
                                       <span class="m-list-timeline__text">
-                                        <img src="img/TAG.png" alt="preset" />
+                                        <img src="img/template/favicon.png" alt="preset" />
                                       </span>
                                       <span class="m-list-timeline__time">Just now</span>
+                                      <span class="m-list-timeline__remove">
+                                        <a href="javascript:;" class="btn btn-sm btn-outline-danger m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill m-btn--air">
+                                          <i class="la la-trash"></i>
+                                        </a>
+                                      </span>
                                     </div>
                                     <div class="m-list-timeline__item">
                                       <span class="m-list-timeline__badge"></span>
                                       <span class="m-list-timeline__text">
-                                        <img src="img/TAG.png" alt="preset" />
-                                        <span class="m-badge m-badge--success m-badge--wide">completed</span>
+                                        <img src="img/template/TAG.png" alt="preset" />
                                       </span>
                                       <span class="m-list-timeline__time">14 mins</span>
+                                      <span class="m-list-timeline__remove">
+                                        <a href="javascript:;" class="btn btn-sm btn-outline-danger m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill m-btn--air">
+                                          <i class="la la-trash"></i>
+                                        </a>
+                                      </span>
                                     </div>
                                     <div class="m-list-timeline__item">
                                       <span class="m-list-timeline__badge"></span>
                                       <span class="m-list-timeline__text">
-                                          <img src="img/TAG.png" alt="preset" />
-                                          <a href="#" class="m-link">Check</a>
+                                          <img src="img/template/TAG.png" alt="preset" />
                                       </span>
                                       <span class="m-list-timeline__time">2 hrs</span>
+                                      <span class="m-list-timeline__remove">
+                                        <a href="javascript:;" class="btn btn-sm btn-outline-danger m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill m-btn--air">
+                                          <i class="la la-trash"></i>
+                                        </a>
+                                      </span>
                                     </div>
                                   </div>
                                 </div>
@@ -209,33 +251,49 @@
                                     <div class="m-list-timeline__item">
                                       <span class="m-list-timeline__badge"></span>
                                       <span class="m-list-timeline__text">
-                                        <img src="img/TAG.png" alt="preset" />
+                                        <img src="img/template/TAG.png" alt="preset" />
                                       </span>
                                       <span class="m-list-timeline__time">Just now</span>
+                                      <span class="m-list-timeline__remove">
+                                        <a href="javascript:;" class="btn btn-sm btn-outline-danger m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill m-btn--air">
+                                          <i class="la la-trash"></i>
+                                        </a>
+                                      </span>
                                     </div>
                                     <div class="m-list-timeline__item">
                                       <span class="m-list-timeline__badge"></span>
                                       <span class="m-list-timeline__text">
-                                        <img src="img/MAT.jpg" alt="preset" />
+                                        <img src="img/template/MAT.jpg" alt="preset" />
                                       </span>
                                       <span class="m-list-timeline__time">34 mins</span>
+                                      <span class="m-list-timeline__remove">
+                                        <a href="javascript:;" class="btn btn-sm btn-outline-danger m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill m-btn--air">
+                                          <i class="la la-trash"></i>
+                                        </a>
+                                      </span>
                                     </div>
                                     <div class="m-list-timeline__item">
                                       <span class="m-list-timeline__badge"></span>
                                       <span class="m-list-timeline__text">
-                                          <img src="img/TAG.png" alt="preset" />
+                                          <img src="img/template/TAG.png" alt="preset" />
                                       </span>
                                       <span class="m-list-timeline__time">1 hrs</span>
+                                      <span class="m-list-timeline__remove">
+                                        <a href="javascript:;" class="btn btn-sm btn-outline-danger m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill m-btn--air">
+                                          <i class="la la-trash"></i>
+                                        </a>
+                                      </span>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                           </div>
                         </div>
-                        <div class="row justify-content-end rh-overlay-tools">
-                            <a href="#" class="btn btn-success m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill m-btn--air">
+                        <div class="row justify-content-end overlay-tools">
+                            <a href="javascript:;" id="preset-add" class="btn btn-success m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill m-btn--air">
                                 <i class="fa fa-plus"></i>
                             </a>
+                            <input type="file" id="preset-file" class="hidden">
                         </div>
                       </div>
                     </div>
@@ -247,15 +305,15 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group m-form__group row">
               <div class="canvas-control">
-                  <button id="uploadPhoto" class="btn m-btn--pill m-btn--air btn-secondary">Upload Photo</button>
+                  <button id="uploadPhoto" class="btn m-btn--pill m-btn--air btn-secondary"><i class="fa fa-upload"></i> Upload Photo</button>
                   <input type="file" id="file" class="hidden">
-                  <button id="resizePng" class="btn m-btn--pill m-btn--air btn-secondary">Resize</button>
-                  <button id="saveToPng" class="btn m-btn--pill m-btn--air btn-success">Save</button>
-                  <button id="delete" class="btn m-btn--pill m-btn--air btn-danger">Delete</button>
+                  <!-- <button id="grayPhoto" class="btn m-btn--pill m-btn--air btn-secondary"><i class="fa fa-expand-arrows-alt"></i> Gray</button> -->
+                  <button id="saveToPng" class="btn m-btn--pill m-btn--air btn-success"><i class="fa fa-save"></i> Save</button>
+                  <button id="delete" class="btn m-btn--pill m-btn--air btn-danger"><i class="fa fa-trash"></i> Delete</button>
               </div>
             </div> <!-- /row -->
             <div class="row" id="canva-row">
-              <canvas id="canvas" height="550">
+              <canvas id="canvas">
               </canvas>
             </div> <!-- /row -->
           </div>
@@ -272,11 +330,9 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
     <script src="js/spectrum.js"></script>
-
-    <script src="js/canvas2image.js"></script>
     <script src="js/fabric.js"></script>
 
-    <script src="js/aligning_guidelines.js"></script>
+    <!-- <script src="js/aligning_guidelines.js"></script> -->
     <script src="js/client.js"></script>
 
 

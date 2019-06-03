@@ -43,13 +43,21 @@ h3 {
 .hidden {
   display: none;
 }
-.rh-scroll-height-fixed {
+.scroll-height-fixed {
   height: 400px;
 }
-.rh-normalize-preset-size img {
+.normalize-preset-size img {
   width: 100px;
   height: 100px;
 }
-.rh-overlay-tools {
+.overlay-tools {
   margin-right: 10px 0 0;
+}
+.m-list-timeline__items .m-list-timeline__item .m-list-timeline__remove {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+  width: 50px;
+  padding: 0 0 0 5px;
+  font-size: .85rem;
 }
