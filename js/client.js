@@ -110,8 +110,14 @@
     fabric.Image.fromURL(imageSrc, function (oImg) {
       // scale image down before adding it onto canvas
       oImg.set({left: 0, top: 0});
-      oImg.scale( oImg.width / canvas.width );
-      rates.push( oImg.width / canvas.width );
+      oImg.scale( canvas.width / oImg.width / 4 );
+      rates.push( canvas.width / oImg.width / 4 );
+
+      oImg.set({
+        borderColor: 'red',
+        cornerColor: 'green',
+        cornerSize: 10
+      });
 
       oImg.on('scaling', function(options) {
         var i = 0;
