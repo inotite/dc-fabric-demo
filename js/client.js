@@ -24,6 +24,7 @@
   // Flags here
   var empty = true; // shows the canvas is empty
   var photo_rate;
+  var photo;
 
   var fl_show_time = 1;  // determine if you are gonna show the Escape Time
   var fl_show_team_name = 1; // determine if you are gonna show the Team Name
@@ -147,9 +148,9 @@
       return;
     }
     // canvas.discardActiveObject();
-    photo.hide();
+    // photo.hide();
     debugBase64(canvas.toDataURL({format: 'png'})); 
-    photo.show();
+    // photo.show();
     photo.selectable = false;
     canvas.renderAll();
     // console.log(canvas.toDataURL({format: 'jpeg'}));
@@ -446,7 +447,7 @@
               photo = oImg;
 
               canvas.clear();
-              canvas.add(oImg);
+              canvas.add(photo);
               // canvas.renderAll();
               resizeCanvas();
 
