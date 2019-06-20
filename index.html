@@ -86,6 +86,13 @@
                               </div>
                             </li>
                             <li class="m-nav__item">
+                              <h3>Input your Score</h3>
+                              <div class="form-group m-form__group">
+                                <label for="room-name">What's your score in this room?</label>
+                                <input class="form-control m-input m-input--air" id="game-score">
+                              </div>
+                            </li>
+                            <li class="m-nav__item">
                               <h3>Time on Team Photos</h3>
                               <div class="m-form__group form-group">
                                 <label for="">Would you like to display escape time on your team photos?</label>
@@ -112,6 +119,22 @@
                                   </label>
                                   <label class="m-radio">
                                     <input type="radio" name="name" value="0"> Disable
+                                    <span></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="m-nav__item">
+                              <h3>Score on Team Photos</h3>
+                              <div class="m-form__group form-group">
+                                <label for="">Would you like to display score on your team photos?</label>
+                                <div class="m-radio-inline">
+                                  <label class="m-radio">
+                                    <input type="radio" name="score" value="1" checked="checked"> Enable
+                                    <span></span>
+                                  </label>
+                                  <label class="m-radio">
+                                    <input type="radio" name="score" value="0"> Disable
                                     <span></span>
                                   </label>
                                 </div>
@@ -166,6 +189,10 @@
                               <div class="form-group m-form__group row">
                                   <label for="time-color" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Escape Time</label>
                                   <input type="text" id="time-color" />
+                              </div>
+                              <div class="form-group m-form__group row">
+                                  <label for="score-color" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Score</label>
+                                  <input type="text" id="score-color" />
                               </div>
                               <div class="form-group m-form__group row">
                                   <label for="highlights" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Highlights</label>

@@ -29,20 +29,24 @@
   var fl_show_time = 1;  // determine if you are gonna show the Escape Time
   var fl_show_team_name = 1; // determine if you are gonna show the Team Name
   var fl_show_room_name = 1; // determine if you are gonna show the Room Name
+  var fl_show_score = 1; // determine if you are gonna show the score
 
   var fl_time_created = false;
   var fl_team_name_created = false;
   var fl_room_name_created = false;
   var fl_escape_label_created = false;
+  var fl_score_created = false;
 
   var gb_time;
   var gb_teamName;
   var gb_roomName;
   var gb_escapeLabel;
+  var gb_score;
 
   var cl_team_name_def = 'rgb(255, 128, 0)';
   var cl_room_name_def = 'yellow';
   var cl_time_def = 'white';
+  var cl_score_def = 'white';
 
   var color_palette = [['black', 'white', 'blanchedalmond', 'rgb(255, 128, 0);', 'hsv 100 70 50'], ['red', 'yellow', 'green', 'blue', 'violet']];
   
@@ -191,7 +195,7 @@
       shadow: 'rgba(0, 0, 0, 0.3) 5px 5px 5px',
       fill: $('#time-color').spectrum("get").toHexString(),
       originX: 'center',
-      selectable: false,
+      // selectable: false,
     });
 
     fl_time_created = true;
@@ -214,7 +218,7 @@
       shadow: 'rgba(0, 0, 0, 0.3) 5px 5px 5px',
       fill: $('#team-name-color').spectrum("get").toHexString(),
       originX: 'center',
-      selectable: false,
+      // selectable: false,
     });
 
     fl_team_name_created = true;
@@ -237,7 +241,7 @@
       shadow: 'rgba(0, 0, 0, 0.3) 5px 5px 5px',
       fill: $('#room-name-color').spectrum("get").toHexString(),
       originX: 'center',
-      selectable: false,
+      // selectable: false,
     });
 
     fl_room_name_created = true;
@@ -295,6 +299,29 @@
     canvas.add(siteLink);
   }
 
+  function createScore() {
+
+    var score = new fabric.Text($('#game-score').val(), {
+      left: canvas.width / 2,
+      top: canvas.height - 120,
+      fontSize: 100,
+      fontWeight: 'bold',
+      shadow: 'rgba(0, 0, 0, 0.3) 5px 5px 5px',
+      fill: $('#score-color').spectrum("get").toHexString(),
+      originX: 'center',
+      // selectable: false,
+    });
+
+    fl_score_created = true;
+    gb_score = score;
+    if ( fl_show_score == 0 )
+      gb_score.hide();
+
+    rates.push(canvas.width / gb_score.width / 7);
+    gb_score.scale(canvas.width / gb_score.width / 7);
+    canvas.add(gb_score);
+  }
+
   // Init color pickers
   $('#team-name-color').spectrum({
     showPaletteOnly: true,
@@ -344,6 +371,19 @@
     }
   });
 
+  $('#score-color').spectrum({
+    showPaletteOnly: true,
+    showPalette:true,
+    color: cl_score_def,
+    palette: color_palette,
+    change: function(color) {
+      if ( fl_score_created ) {
+        gb_score.set( { fill: color.toHexString() } );
+        canvas.renderAll();
+      }
+    }
+  });
+
   $('#highlights').spectrum({
     showPaletteOnly: true,
     showPalette:true,
@@ -359,6 +399,7 @@
     $('#team-name-color').spectrum("set", cl_team_name_def);
     $('#room-name-color').spectrum("set", cl_room_name_def);
     $('#time-color').spectrum("set", cl_time_def);
+    $('#score-color').spectrum("set", cl_score_def);
   });
 
   // Select Room Name
@@ -418,6 +459,18 @@
     }
   });
 
+  $(":input[name='score']").click(function() {
+    fl_show_score = $(this)[0].value;
+
+    if (fl_score_created) {
+      if ( fl_show_score == 1 )
+        gb_score.show();
+      else
+        gb_score.hide();
+      canvas.renderAll();
+    }
+  });
+
   // Upload a Photo
 
   $('#uploadPhoto').click(function(){
@@ -455,6 +508,7 @@
               createTime();
               createTeamName();
               createRoomName();
+              createScore();
               createSocialLink();
             });
         };
