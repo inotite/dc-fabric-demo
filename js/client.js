@@ -322,6 +322,11 @@
     canvas.add(gb_score);
   }
 
+  $('#game-score').change(function(){
+    // gb_score.set({text: $('#game-score').val()});
+    console.log($('#game-score').val());
+  });
+
   // Init color pickers
   $('#team-name-color').spectrum({
     showPaletteOnly: true,
@@ -474,6 +479,10 @@
   // Upload a Photo
 
   $('#uploadPhoto').click(function(){
+    if ($('#game-score').val() == "") {
+      swal("Not allowed", "Enter your score first", "error");
+      return;
+    }
     $('#file').click();
   });
 
