@@ -513,12 +513,12 @@
               // canvas.renderAll();
               resizeCanvas();
 
-              createLogo();
+              // createLogo();
               createTime();
               createTeamName();
               createRoomName();
               createScore();
-              createSocialLink();
+              // createSocialLink();
             });
         };
 
