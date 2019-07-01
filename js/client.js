@@ -151,6 +151,19 @@
       swal("Add your photo first", "No overlay yet ...", "error");
       return;
     }
+
+    console.log("Time Position");
+    console.log("X Coordinate: ", gb_time.left, "Y Coordinate: ", gb_time.top);
+
+    console.log("Team Name Position");
+    console.log("X Coordinate: ", gb_teamName.left, "Y Coordinate: ", gb_teamName.top);
+
+    console.log("Room Name Position");
+    console.log("X Coordinate: ", gb_roomName.left, "Y Coordinate: ", gb_roomName.top);
+
+    console.log("Score Position");
+    console.log("X Coordinate: ", gb_score.left, "Y Coordinate: ", gb_score.top);
+
     // canvas.discardActiveObject();
     // photo.hide();
     debugBase64(canvas.toDataURL({format: 'png'})); 
@@ -479,10 +492,10 @@
   // Upload a Photo
 
   $('#uploadPhoto').click(function(){
-    if ($('#game-score').val() == "") {
-      swal("Not allowed", "Enter your score first", "error");
-      return;
-    }
+    // if ($('#game-score').val() == "") {
+    //   swal("Not allowed", "Enter your score first", "error");
+    //   return;
+    // }
     $('#file').click();
   });
 
